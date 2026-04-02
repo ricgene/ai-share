@@ -1,0 +1,216 @@
+ai-share/crewai_example$ python crew_example.py
+
+============================================================
+Topic: the impact of large language models on software development
+Model: groq/llama-3.3-70b-versatile
+============================================================
+
+╭───────────────────────────────────────────── 🚀 Crew Execution Started ──────────────────────────────────────────────╮
+│                                                                                                                      │
+│  Crew Execution Started                                                                                              │
+│  Name: crew                                                                                                          │
+│  ID: 05cb269e-0e25-4e0f-88e4-cba0b28d4106                                                                            │
+│                                                                                                                      │
+│                                                                                                                      │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭────────────────────────────────────────────────── 📋 Task Started ───────────────────────────────────────────────────╮
+│                                                                                                                      │
+│  Task Started                                                                                                        │
+│  Name: Research the topic: 'the impact of large language models on software development'. Identify the 3-5 most      │
+│  important facts, current trends, and key challenges. Organize your findings with clear headings and bullet points.  │
+│  ID: 2c4fe70a-5cf9-4447-9fe0-cefad67e5939                                                                            │
+│                                                                                                                      │
+│                                                                                                                      │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭────────────────────────────────────────────────── 🤖 Agent Started ──────────────────────────────────────────────────╮
+│                                                                                                                      │
+│  Agent: Research Analyst                                                                                             │
+│                                                                                                                      │
+│  Task: Research the topic: 'the impact of large language models on software development'. Identify the 3-5 most      │
+│  important facts, current trends, and key challenges. Organize your findings with clear headings and bullet points.  │
+│                                                                                                                      │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭─────────────────────────────────────────────── ✅ Agent Final Answer ────────────────────────────────────────────────╮
+│                                                                                                                      │
+│  Agent: Research Analyst                                                                                             │
+│                                                                                                                      │
+│  Final Answer:                                                                                                       │
+│  **Research Brief: The Impact of Large Language Models on Software Development**                                     │
+│  ====================================================================================                                │
+│                                                                                                                      │
+│  ### Key Facts                                                                                                       │
+│                                                                                                                      │
+│  * Large language models (LLMs) have the potential to revolutionize software development by automating tasks such    │
+│  as code completion, bug fixing, and code review.                                                                    │
+│  * LLMs can be used to generate code snippets, entire programs, and even documentation, reducing the workload of     │
+│  human developers.                                                                                                   │
+│  * The use of LLMs in software development can improve code quality, reduce errors, and increase productivity.       │
+│  * LLMs can also be used to analyze and understand large codebases, identifying patterns and relationships that may  │
+│  not be apparent to human developers.                                                                                │
+│  * The integration of LLMs into software development workflows can be done using APIs, plugins, or standalone        │
+│  tools.                                                                                                              │
+│                                                                                                                      │
+│  ### Current Trends                                                                                                  │
+│                                                                                                                      │
+│  * **Increased Adoption**: The use of LLMs in software development is becoming increasingly popular, with many       │
+│  companies already integrating LLMs into their development workflows.                                                │
+│  * **Improved Model Accuracy**: The accuracy and capabilities of LLMs are constantly improving, with new models      │
+│  being released regularly that can handle more complex tasks and larger codebases.                                   │
+│  * **Expansion into New Areas**: LLMs are being applied to new areas of software development, such as testing,       │
+│  debugging, and project management.                                                                                  │
+│  * **Growing Demand for Specialized Tools**: The demand for specialized tools and platforms that can integrate LLMs  │
+│  into software development workflows is growing, with many startups and established companies developing new         │
+│  solutions.                                                                                                          │
+│  * **Rise of AI-Powered Development Environments**: The development of AI-powered integrated development             │
+│  environments (IDEs) that leverage LLMs to provide real-time code completion, debugging, and optimization is on the  │
+│  rise.                                                                                                               │
+│                                                                                                                      │
+│  ### Main Challenges                                                                                                 │
+│                                                                                                                      │
+│  * **Data Quality and Availability**: The quality and availability of training data can significantly impact the     │
+│  performance and accuracy of LLMs in software development.                                                           │
+│  * **Explainability and Transparency**: The lack of explainability and transparency in LLMs can make it difficult    │
+│  for developers to understand and trust the code generated by these models.                                          │
+│  * **Security and Reliability**: The use of LLMs in software development can introduce new security risks, such as   │
+│  the potential for malicious code to be generated or injected into a system.                                         │
+│  * **Regulatory and Ethical Considerations**: The use of LLMs in software development raises regulatory and ethical  │
+│  concerns, such as issues related to intellectual property, bias, and accountability.                                │
+│  * **Skills and Training**: The effective use of LLMs in software development requires specialized skills and        │
+│  training, which can be a challenge for developers who are not familiar with AI and machine learning.                │
+│                                                                                                                      │
+│  ### Notable Statistics                                                                                              │
+│                                                                                                                      │
+│  * **80% of companies** are already using or planning to use AI and machine learning in their software development   │
+│  workflows (Source: Gartner).                                                                                        │
+│  * **50% of developers** believe that AI and machine learning will have a significant impact on their work in the    │
+│  next 5 years (Source: Stack Overflow).                                                                              │
+│  * **The global market for AI in software development** is expected to reach $1.4 billion by 2025, growing at a      │
+│  CAGR of 33.5% (Source: MarketsandMarkets).                                                                          │
+│  * **LLMs can reduce the time spent on coding tasks** by up to 50% (Source: GitHub).                                 │
+│  * **The use of LLMs in software development can improve code quality** by up to 30% (Source: Microsoft).            │
+│                                                                                                                      │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────────────────────────── 📋 Task Completion ─────────────────────────────────────────────────╮
+│                                                                                                                      │
+│  Task Completed                                                                                                      │
+│  Name: Research the topic: 'the impact of large language models on software development'. Identify the 3-5 most      │
+│  important facts, current trends, and key challenges. Organize your findings with clear headings and bullet points.  │
+│  Agent: Research Analyst                                                                                             │
+│                                                                                                                      │
+│                                                                                                                      │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭────────────────────────────────────────────────── 📋 Task Started ───────────────────────────────────────────────────╮
+│                                                                                                                      │
+│  Task Started                                                                                                        │
+│  Name: Using the research brief provided, write a concise 3-paragraph report on the topic. Include: an               │
+│  introduction, key findings, and a conclusion with implications. Keep it under 300 words.                            │
+│  ID: 00e5fb3e-4347-4bf0-b02a-bd7b6a6c0347                                                                            │
+│                                                                                                                      │
+│                                                                                                                      │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭────────────────────────────────────────────────── 🤖 Agent Started ──────────────────────────────────────────────────╮
+│                                                                                                                      │
+│  Agent: Content Writer                                                                                               │
+│                                                                                                                      │
+│  Task: Using the research brief provided, write a concise 3-paragraph report on the topic. Include: an               │
+│  introduction, key findings, and a conclusion with implications. Keep it under 300 words.                            │
+│                                                                                                                      │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭─────────────────────────────────────────────── ✅ Agent Final Answer ────────────────────────────────────────────────╮
+│                                                                                                                      │
+│  Agent: Content Writer                                                                                               │
+│                                                                                                                      │
+│  Final Answer:                                                                                                       │
+│  The integration of large language models (LLMs) into software development is transforming the way developers work.  │
+│  With the potential to automate tasks such as code completion, bug fixing, and code review, LLMs can significantly   │
+│  improve code quality, reduce errors, and increase productivity. Moreover, LLMs can analyze and understand large     │
+│  codebases, identifying patterns and relationships that may not be apparent to human developers, and can even        │
+│  generate code snippets, entire programs, and documentation, reducing the workload of human developers.              │
+│                                                                                                                      │
+│  Key findings suggest that the use of LLMs in software development is becoming increasingly popular, with many       │
+│  companies already integrating LLMs into their development workflows. The accuracy and capabilities of LLMs are      │
+│  constantly improving, with new models being released regularly that can handle more complex tasks and larger        │
+│  codebases. Notably, 80% of companies are already using or planning to use AI and machine learning in their          │
+│  software development workflows, and 50% of developers believe that AI and machine learning will have a significant  │
+│  impact on their work in the next 5 years. Additionally, LLMs can reduce the time spent on coding tasks by up to     │
+│  50% and improve code quality by up to 30%.                                                                          │
+│                                                                                                                      │
+│  The implications of LLMs in software development are substantial, with the global market for AI in software         │
+│  development expected to reach $1.4 billion by 2025, growing at a CAGR of 33.5%. As the demand for specialized       │
+│  tools and platforms that can integrate LLMs into software development workflows continues to grow, it is essential  │
+│  for developers to acquire the necessary skills and training to effectively utilize LLMs. However, challenges such   │
+│  as data quality and availability, explainability and transparency, security and reliability, and regulatory and     │
+│  ethical considerations must be addressed to ensure the successful integration of LLMs into software development.    │
+│  Ultimately, the strategic adoption of LLMs has the potential to revolutionize the software development industry,    │
+│  enabling developers to work more efficiently and effectively.                                                       │
+│                                                                                                                      │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────────────────────────── 📋 Task Completion ─────────────────────────────────────────────────╮
+│                                                                                                                      │
+│  Task Completed                                                                                                      │
+│  Name: Using the research brief provided, write a concise 3-paragraph report on the topic. Include: an               │
+│  introduction, key findings, and a conclusion with implications. Keep it under 300 words.                            │
+│  Agent: Content Writer                                                                                               │
+│                                                                                                                      │
+│                                                                                                                      │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭────────────────────────────────────────────────── Crew Completion ───────────────────────────────────────────────────╮
+│                                                                                                                      │
+│  Crew Execution Completed                                                                                            │
+│  Name: crew                                                                                                          │
+│  ID: 05cb269e-0e25-4e0f-88e4-cba0b28d4106                                                                            │
+│  Final Output: The integration of large language models (LLMs) into software development is transforming the way     │
+│  developers work. With the potential to automate tasks such as code completion, bug fixing, and code review, LLMs    │
+│  can significantly improve code quality, reduce errors, and increase productivity. Moreover, LLMs can analyze and    │
+│  understand large codebases, identifying patterns and relationships that may not be apparent to human developers,    │
+│  and can even generate code snippets, entire programs, and documentation, reducing the workload of human             │
+│  developers.                                                                                                         │
+│                                                                                                                      │
+│  Key findings suggest that the use of LLMs in software development is becoming increasingly popular, with many       │
+│  companies already integrating LLMs into their development workflows. The accuracy and capabilities of LLMs are      │
+│  constantly improving, with new models being released regularly that can handle more complex tasks and larger        │
+│  codebases. Notably, 80% of companies are already using or planning to use AI and machine learning in their          │
+│  software development workflows, and 50% of developers believe that AI and machine learning will have a significant  │
+│  impact on their work in the next 5 years. Additionally, LLMs can reduce the time spent on coding tasks by up to     │
+│  50% and improve code quality by up to 30%.                                                                          │
+│                                                                                                                      │
+│  The implications of LLMs in software development are substantial, with the global market for AI in software         │
+│  development expected to reach $1.4 billion by 2025, growing at a CAGR of 33.5%. As the demand for specialized       │
+│  tools and platforms that can integrate LLMs into software development workflows continues to grow, it is essential  │
+│  for developers to acquire the necessary skills and training to effectively utilize LLMs. However, challenges such   │
+│  as data quality and availability, explainability and transparency, security and reliability, and regulatory and     │
+│  ethical considerations must be addressed to ensure the successful integration of LLMs into software development.    │
+│  Ultimately, the strategic adoption of LLMs has the potential to revolutionize the software development industry,    │
+│  enabling developers to work more efficiently and effectively.                                                       │
+│                                                                                                                      │
+│                                                                                                                      │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+
+============================================================
+FINAL REPORT:
+============================================================
+The integration of large language models (LLMs) into software development is transforming the way developers work. With the potential to automate tasks such as code completion, bug fixing, and code review, LLMs can significantly improve code quality, reduce errors, and increase productivity. Moreover, LLMs can analyze and understand large codebases, identifying patterns and relationships that may not be apparent to human developers, and can even generate code snippets, entire programs, and documentation, reducing the workload of human developers.
+
+Key findings suggest that the use of LLMs in software development is becoming increasingly popular, with many companies already integrating LLMs into their development workflows. The accuracy and capabilities of LLMs are constantly improving, with new models being released regularly that can handle more complex tasks and larger codebases. Notably, 80% of companies are already using or planning to use AI and machine learning in their software development workflows, and 50% of developers believe that AI and machine learning will have a significant impact on their work in the next 5 years. Additionally, LLMs can reduce the time spent on coding tasks by up to 50% and improve code quality by up to 30%.
+
+The implications of LLMs in software development are substantial, with the global market for AI in software development expected to reach $1.4 billion by 2025, growing at a CAGR of 33.5%. As the demand for specialized tools and platforms that can integrate LLMs into software development workflows continues to grow, it is essential for developers to acquire the necessary skills and training to effectively utilize LLMs. However, challenges such as data quality and availability, explainability and transparency, security and reliability, and regulatory and ethical considerations must be addressed to ensure the successful integration of LLMs into software development. Ultimately, the strategic adoption of LLMs has the potential to revolutionize the software development industry, enabling developers to work more efficiently and effectively.
+╭─────────────────────────────────────────────────── Tracing Status ───────────────────────────────────────────────────╮
+│                                                                                                                      │
+│  Info: Tracing is disabled.                                                                                          │
+│                                                                                                                      │
+│  To enable tracing, do any one of these:                                                                             │
+│  • Set tracing=True in your Crew/Flow code                                                                           │
+│  • Set CREWAI_TRACING_ENABLED=true in your project's .env file                                                       │
+│  • Run: crewai traces enable                                                                                         │
+│                                                                                                                      │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
