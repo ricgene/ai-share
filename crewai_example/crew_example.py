@@ -1,22 +1,23 @@
 """
 Simple two-agent CrewAI example: Researcher + Writer collaborating to produce a report.
 
-Uses Ollama (FREE local inference — no API key, no internet required after setup).
-See docs/ollama-how-to.txt for setup steps.
-
-Quick start:
-  curl -fsSL https://ollama.com/install.sh | sh
-  ollama pull llama3.2:1b
-  ollama serve   # if not already running
+Uses Groq if GROQ_API_KEY is set in .env (fast cloud inference).
+Otherwise uses Ollama (FREE local inference — no API key, no internet required after setup).
+See docs/groq-key-instructions.txt for Groq setup.
+See docs/ollama-how-to.txt for Ollama setup.
 """
 
+import os
+from dotenv import load_dotenv
 from crewai import Agent, Task, Crew, Process
 
-# Ollama model options (all free, run locally):
-#   ollama/llama3.2:1b  — fastest; recommended for this machine (4 GB VRAM)
-#   ollama/llama3.2     — good general use; fits in VRAM
-#   ollama/phi3         — efficient Microsoft model
-MODEL = "ollama/llama3.2:1b"
+load_dotenv(dotenv_path='../.env')
+
+# Model selection: Groq if API key available, else Ollama
+if os.getenv("GROQ_API_KEY"):
+    MODEL = "groq/llama3-70b-8192"  # Groq model (fast, cloud-based)
+else:
+    MODEL = "ollama/llama3.2:1b"   # Ollama model (local, free)
 
 
 # --- Agents ---
