@@ -1,1 +1,43 @@
 .venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+*.venv
+env/
+venv/
+ENV/
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# VS Code
+.vscode/
+
+# JetBrains
+.idea/
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# local secret/config files
+crewai_example/.env
+crewai_example/*.log
+crewai_example/*.sqlite3
+
+# Python virtual environment in subproject
+crewai_example/.venv/
+
+# Model downloads / artifacts / caches (common in model/LLM projects)
+crewai_example/models/
+crewai_example/cache/
+crewai_example/checkpoints/
+crewai_example/__pycache__/
+
