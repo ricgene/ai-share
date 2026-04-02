@@ -15,7 +15,7 @@ load_dotenv(dotenv_path='../.env')
 
 # Model selection: Groq if API key available, else Ollama
 if os.getenv("GROQ_API_KEY"):
-    MODEL = "groq/llama3-70b-8192"  # Groq model (fast, cloud-based)
+    MODEL = "groq/llama-3.3-70b-versatile"  # Groq model (fast, cloud-based)
 else:
     MODEL = "ollama/llama3.2:1b"   # Ollama model (local, free)
 
