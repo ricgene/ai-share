@@ -1,0 +1,79 @@
+I asked perplexity.ai the question answered below:
+
+Large enterprises pursuing SOC‑2‑compliant deployments of “agentic” AI across **AWS**, **Azure**, and **GCP** generally have four main option archetypes: (1) hyperscaler‑native, SOC‑2‑aligned PaaS; (2) third‑party SOC‑2‑ready agent platforms that run on your cloud; (3) single‑tenant “agent‑in‑your‑cloud” SaaS; and (4) custom‑built stacks on top of compliant IaaS/PaaS. [convox](https://www.convox.com/enterprise-ai-agent-infrastructure)
+
+Below is how each pattern plays out with SOC‑2 and agentic workloads.
+
+***
+
+### 1. Hyperscaler‑native SOC‑2‑aligned stacks
+
+All three major clouds provide SOC‑2 Type II reports for their core infrastructure and many managed services, but **SOC‑2 is “shared responsibility”**—you must still implement your own controls for access, logging, data‑handling, and agent‑specific risk. [cloud.google](https://cloud.google.com/security/compliance/soc-2)
+
+- **AWS**:  
+  - Use services like **AWS IAM**, **CloudTrail**, **KMS**, **VPC**, and **GuardDuty** to meet SOC‑2 controls around access, encryption, and monitoring. [aws.amazon](https://aws.amazon.com/security/)
+  - For agentic workloads, you can run agents on **ECS/EKS** or self‑hosted containers/RAG backends, then layer SOC‑2‑style logging, secrets management, and audit trails across agent sessions. [digitalocean](https://www.digitalocean.com/resources/articles/comparing-aws-azure-gcp)
+
+- **Azure**:  
+  - Rely on Azure’s SOC‑2‑certified infrastructure and services such as **Azure AD / Entra**, **Azure Monitor**, **Azure Key Vault**, and **Azure Policy**. [linkedin](https://www.linkedin.com/posts/gerardblokdyk_cloud-specific-compliance-aws-has-its-own-activity-7438673901645291521-2LFx)
+  - For agentic AI, many enterprises combine Azure OpenAI with Azure‑hosted agents or orchestration (e.g., custom Python services on **Azure Container Apps** or **AKS**) and augment them with tenant‑level logging and RBAC to satisfy SOC‑2’s “access + who/what/when/why” model. [glean](https://www.glean.com/blog/agentic-security-aware)
+
+- **GCP**:  
+  - Google Cloud is SOC‑2 Type II certified for many services, documented via **GCP’s SOC‑2 compliance page**. [cloud.google](https://cloud.google.com/security/compliance/soc-2)
+  - For agentic workloads, organizations often run agents on **Google Kubernetes Engine (GKE)**, using **Cloud Logging**, **Cloud Audit Logs**, and **Cloud Key Management** to satisfy SOC‑2 access and monitoring requirements. [glean](https://www.glean.com/blog/agentic-security-aware)
+
+In all three, the pattern is: **cloud‑provider‑certified infrastructure + your own SOC‑2‑aligned controls for agent lifecycle, data, and logging**. [snyk](https://snyk.io/articles/cloud-compliance/)
+
+***
+
+### 2. Third‑party SOC‑2‑ready agent platforms on your cloud
+
+Several vendors now offer SOC‑2‑aligned “agent infrastructure” that you deploy into **your** AWS, Azure, or GCP account so you retain data‑residency and audit‑trail control. [convox](https://www.convox.com/enterprise-ai-agent-infrastructure)
+
+- **Convox‑style agent platforms**:  
+  - Products like **Convox** run in your AWS/GCP/Azure account, providing isolated containers for each agent, multi‑tenancy, and BYOC (bring‑your‑own‑cloud) deployment. [convox](https://www.convox.com/enterprise-ai-agent-infrastructure)
+  - They emit logs to your cloud’s native tooling (e.g., CloudWatch, Azure Monitor, GCP Logging) and expose SOC‑2‑aligned controls around isolation, encryption, and audit trails, which your SOC‑2 audit team can map to your existing controls. [convox](https://www.convox.com/enterprise-ai-agent-infrastructure)
+
+- **Single‑tenant “agent in your cloud” SaaS**:  
+  - Tools such as **Glean Protect** deploy AI agents into your chosen cloud (AWS, Azure, or GCP) while keeping your data in a single‑tenant or customer‑managed environment; they also highlight SOC‑2 Type II, ISO 27001, and HIPAA as part of their compliance posture. [glean](https://www.glean.com/blog/agentic-security-aware)
+  - This lets enterprises satisfy SOC‑2 data‑handling, access‑control, and incident‑response requirements without ceding full control to a generic multi‑tenant SaaS. [snyk](https://snyk.io/articles/cloud-compliance/)
+
+***
+
+### 3. Custom‑built agentic stacks on compliant IaaS/PaaS
+
+Many large enterprises (especially in regulated sectors) choose to **build their own agentic stack** atop SOC‑2‑aligned hyperscaler services, especially when agents need strict data‑governance boundaries (e.g., EHR, financial advising, legal). [truefoundry](https://www.truefoundry.com/blog/agentic-ai-security)
+
+- **Core patterns**:  
+  - Run agents on Kubernetes or serverless (EKS/AKS/GKE, Lambda/Azure Functions/Cloud Run) with least‑privilege IAM/AD/RBAC and strict VPC/network‑segmentation. [digitalocean](https://www.digitalocean.com/resources/articles/comparing-aws-azure-gcp)
+  - Use the cloud’s native logging and tracing (CloudTrail/Azure Monitor/GCP Logging) to satisfy SOC‑2 requirements for audit trails, session logging, and incident forensics for agent‑initiated actions. [truefoundry](https://www.truefoundry.com/blog/agentic-ai-security)
+  - Enforce SOC‑2‑style controls such as:  
+    - Approval workflows for agent‑initiated external actions (e.g., sending emails, updating records). [truefoundry](https://www.truefoundry.com/blog/agentic-ai-security)
+    - Runtime policy enforcement (e.g., guardrails on data access, PII, or regulated systems). [truefoundry](https://www.truefoundry.com/blog/agentic-ai-security)
+
+- **SOC‑2 workflow**:  
+  - Define in‑scope cloud services and agent components, then map them to SOC‑2 trust‑service criteria (security, availability, confidentiality, processing integrity). [linkedin](https://www.linkedin.com/posts/gerardblokdyk_cloud-specific-compliance-aws-has-its-own-activity-7438673901645291521-2LFx)
+  - Your auditor signs off on your configuration and policies, not just the underlying cloud‑provider cert. [snyk](https://snyk.io/articles/cloud-compliance/)
+
+***
+
+### 4. How large orgs typically choose between AWS, Azure, and GCP
+
+Enterprises often pick the cloud based on **existing ecosystem, data‑residency commitments, and SOC‑2 program maturity**, then layer agentic workloads on top. [digitalocean](https://www.digitalocean.com/resources/articles/comparing-aws-azure-gcp)
+
+| Dimension | AWS‑centric path | Azure‑centric path | GCP‑centric path |
+| --- | --- | --- | --- |
+| Typical driver | Granular control, broad service catalog, multi‑cloud flexibility.  [digitalocean](https://www.digitalocean.com/resources/articles/comparing-aws-azure-gcp) | Existing Microsoft stack (M365, AD, Teams, hybrid via Azure Arc).  [digitalocean](https://www.digitalocean.com/resources/articles/comparing-aws-azure-gcp) | Strong Kubernetes, data‑analytics, and native AI (Vertex/Gemini).  [digitalocean](https://www.digitalocean.com/resources/articles/comparing-aws-azure-gcp) |
+| SOC‑2 posture | Rely on AWS‑certified infra + your own IAM/logging/secrets controls.  [aws.amazon](https://aws.amazon.com/security/) | Use Azure‑certified infra plus Entra/Policy/Logging for SOC‑2 mappings.  [linkedin](https://www.linkedin.com/posts/gerardblokdyk_cloud-specific-compliance-aws-has-its-own-activity-7438673901645291521-2LFx) | Leverage GCP‑certified infra plus Cloud Logging/Audit Logs for agent‑related controls.  [cloud.google](https://cloud.google.com/security/compliance/soc-2) |
+| Agentic option | Custom agents on EKS/ECS, or third‑party agent platforms in your AWS account.  [convox](https://www.convox.com/enterprise-ai-agent-infrastructure) | Agents built on Azure OpenAI + AKS/Container Apps, possibly with single‑tenant SaaS that runs in your Azure tenant.  [digitalocean](https://www.digitalocean.com/resources/articles/comparing-aws-azure-gcp) | Agent workloads on GKE or Vertex‑integrated tooling, often with strict per‑agent isolation and logging.  [digitalocean](https://www.digitalocean.com/resources/articles/comparing-aws-azure-gcp) |
+
+***
+
+### Practical takeaway for your org
+
+For a large, SOC‑2‑mandated enterprise deploying agentic AI at scale, the most common options are:
+
+- **SOC‑2‑aligned hyperscaler stack** (AWS/Azure/GCP) + custom or third‑party agent layer, with you owning the SOC‑2 control narrative. [cloud.google](https://cloud.google.com/security/compliance/soc-2)
+- **SOC‑2‑aligned “agent‑as‑infrastructure” platform** that runs in **your** cloud account, giving you agent isolation, logging, and audit trails without re‑inventing the SOC‑2 wheel. [glean](https://www.glean.com/blog/agentic-security-aware)
+
+If you share your current cloud (AWS vs Azure vs GCP), SaaS mix, and whether you want bring‑your‑own‑agent‑code vs a managed agent platform, I can sketch a concrete reference architecture for SOC‑2‑compliant agentic deployments in your environment.

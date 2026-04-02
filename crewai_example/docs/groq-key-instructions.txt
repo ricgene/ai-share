@@ -1,0 +1,77 @@
+====================================================
+  HOW TO GET YOUR FREE GROQ API KEY
+====================================================
+
+
+Groq is a free AI inference service — no credit card required.
+Each person needs their own key (takes about 2 minutes to set up).
+
+
+STEP 1: Create a free account
+------------------------------
+  Go to: https://console.groq.com
+  Sign up with any Google/GitHub account or email address.
+
+
+STEP 2: Get your API key
+-------------------------
+  1. Log in to console.groq.com
+  2. Click "API Keys" in the left sidebar
+  3. Click "Create API Key"
+  4. Give it a name (e.g. "crewai-demo")
+  5. Copy the key — it starts with "gsk_"
+     (you won't be able to see it again after closing the dialog)
+
+
+STEP 3: Set the key as an environment variable
+-----------------------------------------------
+  Windows (Command Prompt):
+    set GROQ_API_KEY=gsk_your_key_here
+
+  Windows (PowerShell):
+    $env:GROQ_API_KEY="gsk_your_key_here"
+
+  Mac / Linux:
+    export GROQ_API_KEY=gsk_your_key_here
+
+  To make it permanent on Windows:
+    1. Search "Environment Variables" in the Start menu
+    2. Click "Environment Variables..."
+    3. Under "User variables", click New
+    4. Variable name:  GROQ_API_KEY
+    5. Variable value: gsk_your_key_here
+    6. Click OK — restart your terminal
+
+
+STEP 4: Install dependencies and run
+--------------------------------------
+  pip install crewai
+  python crew_example.py
+
+
+====================================================
+  FREE TIER LIMITS (per account, resets daily)
+====================================================
+
+  llama-3.3-70b-versatile:  6,000 tokens/min  |  500,000 tokens/day
+  llama-3.1-8b-instant:    30,000 tokens/min  |  500,000 tokens/day
+
+  This demo uses well under these limits per run.
+  If you hit a rate limit, just wait a minute and try again.
+
+
+====================================================
+  TROUBLESHOOTING
+====================================================
+
+  "GROQ_API_KEY is not set"
+    -> The environment variable isn't visible to your terminal.
+       Close and reopen your terminal after setting it, or set it
+       in the same terminal session before running the script.
+
+  "AuthenticationError" or "401"
+    -> Double-check the key was copied correctly (no extra spaces).
+
+  "Rate limit exceeded"
+    -> You've hit the per-minute limit. Wait 60 seconds and retry.
+       Or switch to llama-3.1-8b-instant in crew_example.py (MODEL variable).

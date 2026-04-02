@@ -1,0 +1,177 @@
+====================================================
+  HOW TO RUN LLMs LOCALLY WITH OLLAMA (FREE)
+====================================================
+
+Ollama lets you run AI models entirely on your own machine.
+No internet required after setup, no API key, no account, no cost.
+
+Website: https://ollama.com
+
+
+====================================================
+  SYSTEM REQUIREMENTS
+====================================================
+
+  Minimum:
+    - Windows 10 / 11, macOS 12+, or Linux
+    - 8 GB RAM
+    - 5 GB free disk space (for a small model)
+
+  Recommended for good performance:
+    - 16 GB RAM
+    - NVIDIA GPU with 6+ GB VRAM (uses CUDA automatically)
+    - 20+ GB free disk space
+
+  Without a GPU:
+    - Models still run on CPU — just slower (10–60s per response)
+    - Stick to smaller models (3B–7B parameters)
+
+
+====================================================
+  STEP 1: INSTALL OLLAMA
+====================================================
+
+  Windows:
+    Download and run the installer from https://ollama.com/download
+    Ollama installs as a background service that starts with Windows.
+
+  Mac:
+    Download the .dmg from https://ollama.com/download
+    Drag to Applications, then open it.
+
+  Linux:
+    curl -fsSL https://ollama.com/install.sh | sh
+
+
+====================================================
+  STEP 2: PULL A MODEL
+====================================================
+
+  Open a terminal and run:
+
+    ollama pull llama3.2
+
+  This downloads the model (~2 GB). You only do this once.
+  Ollama stores models locally in your user profile.
+
+  Popular free models and their sizes:
+  -------------------------------------------------------
+  Model               Size    Best for
+  -------------------------------------------------------
+  llama3.2            2 GB    General use, fast on CPU
+  llama3.2:1b         0.8 GB  Very fast, minimal RAM
+  mistral             4 GB    Good reasoning, 8GB+ RAM
+  gemma2              5 GB    Google model, good quality
+  phi3                2 GB    Microsoft model, efficient
+  llama3.1:8b         5 GB    Strong general model
+  llama3.3:70b        40 GB   Best quality, needs GPU
+  -------------------------------------------------------
+
+  To see all available models: https://ollama.com/library
+
+
+====================================================
+  STEP 3: RUN A MODEL (CHAT IN YOUR TERMINAL)
+====================================================
+
+  ollama run llama3.2
+
+  This opens an interactive chat session in your terminal.
+  Type your message and press Enter. Type /bye to exit.
+
+  Example:
+    >>> Tell me a fun fact about penguins.
+    Penguins are the only birds that can swim but not fly...
+
+
+====================================================
+  USEFUL OLLAMA COMMANDS
+====================================================
+
+  ollama pull <model>       Download a model
+  ollama run <model>        Start an interactive chat
+  ollama list               List all models you have downloaded
+  ollama rm <model>         Delete a model to free disk space
+  ollama ps                 Show which models are currently loaded
+  ollama serve              Start the Ollama server manually
+                            (usually starts automatically)
+
+  sudo service ollama stop
+
+
+====================================================
+  USING OLLAMA WITH PYTHON (crewai or langchain)
+====================================================
+
+  Ollama runs a local API server at http://localhost:11434
+  Most AI frameworks (CrewAI, LangChain, LlamaIndex) support it.
+
+  In CrewAI, set the model string to:
+    "ollama/llama3.2"          (or whichever model you pulled)
+
+  No API key needed — just make sure Ollama is running.
+  If the server isn't running, start it with: ollama serve
+
+
+====================================================
+  THIS MACHINE'S SETUP & RECOMMENDATIONS
+====================================================
+
+  Hardware detected:
+    - CPU:  Intel Core i7-6700HQ @ 2.60GHz (8 logical cores)
+    - RAM:  7.7 GB total  (meets minimum; below recommended 16 GB)
+    - GPU:  NVIDIA GeForce GTX 950M, 4 GB VRAM  (CUDA available via WSL2)
+    - Disk: ~879 GB free  (well above the 20 GB requirement)
+    - OS:   WSL2 / Linux
+
+  Status vs recommended spec:
+    RAM       7.7 GB    vs  16 GB recommended  → below, but workable
+    GPU VRAM  4 GB      vs  6+ GB recommended  → below; stick to small models
+    Disk      879 GB    vs  20+ GB recommended → more than enough
+    CUDA      available via WSL2               → GPU acceleration enabled
+
+  Recommended models for this machine:
+  -------------------------------------------------------
+  Model               Size    Notes
+  -------------------------------------------------------
+  llama3.2:1b         0.8 GB  Fastest; fits easily in VRAM
+  llama3.2            2 GB    Good general use; fits in VRAM
+  phi3                2 GB    Efficient; worth trying
+  mistral             4 GB    Borderline — may spill to CPU RAM
+  -------------------------------------------------------
+  Avoid 5 GB+ models (gemma2, llama3.1:8b) — they will exceed
+  VRAM and fall back to slow CPU-only mode.
+
+  Quick-start for this machine:
+    curl -fsSL https://ollama.com/install.sh | sh   # install
+    ollama pull llama3.2                            # download model
+    ollama run llama3.2                             # test in terminal
+
+  In CrewAI, set the model to:
+    "ollama/llama3.2"   (no API key needed)
+
+
+====================================================
+  TROUBLESHOOTING
+====================================================
+
+  "connection refused" / "could not connect to ollama"
+    -> Ollama server isn't running.
+       Start it manually: ollama serve
+       On Windows, check the system tray for the Ollama icon.
+
+  Model responds very slowly
+    -> You're running on CPU without a GPU. This is normal.
+       Try a smaller model: ollama pull llama3.2:1b
+
+  "not enough memory"
+    -> The model is too large for your RAM.
+       Delete it (ollama rm <model>) and pull a smaller one.
+
+  Model output seems low quality
+    -> Try a larger model if your hardware supports it,
+       or try mistral / gemma2 which often outperform llama at same size.
+
+  Where are models stored?
+    Windows:  C:\Users\<you>\.ollama\models
+    Mac/Linux: ~/.ollama/models
